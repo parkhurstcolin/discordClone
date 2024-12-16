@@ -1,21 +1,30 @@
 import React, { useState } from "react";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
+import Modal from "./Components/Modal/Modal";
 import ToDos from "./Components/ToDos/ToDos";
 
 const App = () => {
-	const [addToDo, setAddToDo] = useState(false);
-	function addToDoHandler() {
-		setAddToDo(!addToDo);
+	const [isModalOpen, setModalOpen] = useState(false);
+
+	function modalHandler() {
+		setModalOpen(!isModalOpen);
 	}
+
 	return (
-		<div className="container mx-auto px-32 text-center">
-			{addToDo && <h1>Button Works</h1>}
-			<>
-				<Header addToDo={addToDoHandler} />
-				<Body />
-			</>
-		</div>
+		<>
+			{isModalOpen && (
+				<Modal onClose={modalHandler}>
+					<ToDos />
+				</Modal>
+			)}
+			<div className="container mx-auto px-32 text-center">
+				<>
+					<Header addToDo={modalHandler} />
+					<Body />
+				</>
+			</div>
+		</>
 	);
 };
 

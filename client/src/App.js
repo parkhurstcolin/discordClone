@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
+import ToDos from "./Components/ToDos/ToDos";
 
 const App = () => {
 	const [addToDo, setAddToDo] = useState(false);
@@ -9,9 +10,11 @@ const App = () => {
 	}
 	return (
 		<div className="container mx-auto px-32 text-center">
-			<Header addToDo={addToDoHandler} />
-			{!addToDo && <h1>Button Works</h1>}
-			<Body />
+			{addToDo && <h1>Button Works</h1>}
+			<>
+				<Header addToDo={addToDoHandler} />
+				<Body />
+			</>
 		</div>
 	);
 };

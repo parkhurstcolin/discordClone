@@ -1,9 +1,12 @@
 import React from "react";
+import Icon from "../logo512.png";
 
 const Header = ({ addToDo }) => {
 	return (
 		<div className="flex">
-			<div className="flex-2 m-0 px-7 bg-red-500"> </div>
+			<div className="flex-2 bg-red-500">
+				<img src={Icon} width={56} height={56} />
+			</div>
 			<h1 className="flex-1 m-0 p-2 text-3xl font-bold bg-red-500 text-white">
 				To Do List
 			</h1>

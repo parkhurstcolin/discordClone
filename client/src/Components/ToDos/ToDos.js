@@ -1,28 +1,35 @@
-import React from "react";
+import _ from "lodash";
+import React, { Component } from "react";
+import toDoFields from "./toDoFields";
+import Fields from "./Fields";
 
-const ToDos = () => {
-	return (
-		<div className="">
-			<div className="flex">
-				<div className="">
+class ToDos extends Component {
+	renderFields() {
+		return _.map(toDoFields, ({ label, name }) => {
+			return (
+				<Fields
+					component={toDoFields}
+					type="text"
+					label={label}
+					name={name}
+					key={name}
+				/>
+			);
+		});
+	}
+	render() {
+		return (
+			<div>
+				<div className="flex">
 					<h1 className="text-3xl my-1 p-1">New To Do:</h1>
 				</div>
+				{this.renderFields()}
+				<button className="b-0 m-1 p-2 bg-green-500 float-right rounded">
+					Submit
+				</button>
 			</div>
-			<div>
-				<div className="m-1">
-					<label className="ml-3">* Name:</label>
-					<input className="m-1 border-solid border"></input>
-				</div>
-				<div className="m-1">
-					<label className="ml-3">* To Do:</label>
-					<input className="m-1 border-solid border"></input>
-				</div>
-			</div>
-			<button className="b-0 m-1 p-2 bg-green-500 float-right rounded">
-				Submit
-			</button>
-		</div>
-	);
-};
+		);
+	}
+}
 
 export default ToDos;

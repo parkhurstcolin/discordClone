@@ -10,12 +10,12 @@ const App = () => {
 	function modalHandler() {
 		setModalOpen(!isModalOpen);
 	}
-
+	function submitHandler({ name, label }) {}
 	return (
 		<>
 			{isModalOpen && (
 				<Modal onClose={modalHandler}>
-					<ToDos />
+					<ToDos onSubmit={submitHandler} />
 				</Modal>
 			)}
 			<div className="container mx-auto px-32 text-center">

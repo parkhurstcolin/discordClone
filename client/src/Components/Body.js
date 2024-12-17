@@ -1,4 +1,5 @@
 import React from "react";
+import NewToDo from "./ToDos/NewToDo";
 
 const Body = () => {
 	return (

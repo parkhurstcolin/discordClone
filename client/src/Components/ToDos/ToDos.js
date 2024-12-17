@@ -23,10 +23,15 @@ class ToDos extends Component {
 				<div className="flex">
 					<h1 className="text-3xl my-1 p-1">New To Do:</h1>
 				</div>
-				{this.renderFields()}
-				<button className="b-0 m-1 p-2 bg-green-500 float-right rounded hover:bg-green-400">
-					Submit
-				</button>
+				<form onSubmit={this.props.onSubmit}>
+					{this.renderFields()}
+					<button
+						className="b-0 m-1 p-2 bg-green-500 float-right rounded hover:bg-green-400"
+						type="submit"
+					>
+						Submit
+					</button>
+				</form>
 			</div>
 		);
 	}

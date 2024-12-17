@@ -1,7 +1,7 @@
 var http = require("http");
+const keys = require("./config/keys");
 const { MongoClient } = require("mongodb");
 
-const keys = require("./config/keys");
 const client = new MongoClient(keys.mongoURI);
 
 http

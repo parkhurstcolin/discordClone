@@ -23,7 +23,7 @@ class ToDos extends Component {
 				<div className="flex">
 					<h1 className="text-3xl my-1 p-1">New To Do:</h1>
 				</div>
-				<form onSubmit={this.props.onSubmit}>
+				<form onSubmit={this.submitHandler}>
 					{this.renderFields()}
 					<button
 						className="b-0 m-1 p-2 bg-green-500 float-right rounded hover:bg-green-400"

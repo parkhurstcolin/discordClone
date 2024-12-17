@@ -7,18 +7,18 @@ import ToDos from "./ToDos/ToDos";
 
 import * as actions from "../actions/index";
 
-const App = () => {
+const App = ({ submitToDo, fetchToDo }) => {
 	const [isModalOpen, setModalOpen] = useState(false);
 
 	function modalHandler() {
 		setModalOpen(!isModalOpen);
 	}
-	function submitHandler({ name, label }) {}
+
 	return (
 		<>
 			{isModalOpen && (
 				<Modal onClose={modalHandler}>
-					<ToDos onSubmit={submitHandler} />
+					<ToDos onSubmit={() => submitToDo(this.todo, this.username)} />
 				</Modal>
 			)}
 			<div className="container mx-auto px-32 text-center">

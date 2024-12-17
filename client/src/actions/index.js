@@ -8,7 +8,8 @@ export const fetchToDo = () => async (dispatch) => {
 };
 
 export const submitToDo = (values) => async (dispatch) => {
-	const res = await axios.post("/api/todo", values);
+	const res = await axios.post("/api/todo");
+	console.log(res);
 
 	dispatch({ type: SUBMIT_TO_DO, payload: res.data });
 };

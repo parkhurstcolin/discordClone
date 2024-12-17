@@ -1,10 +1,14 @@
 import React from "react";
 
-const Fields = ({ label, name }) => {
+const Fields = ({ input, label, name }) => {
 	return (
 		<div>
 			<label className="mr-2 bold">{label}</label>
-			<input className="border min-w-full bg-gray-50" name={name}></input>
+			<input
+				{...input}
+				className="border min-w-full bg-gray-50"
+				name={name}
+			></input>
 		</div>
 	);
 };

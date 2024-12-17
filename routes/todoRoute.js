@@ -1,6 +1,7 @@
 const { MongoClient } = require("mongodb");
+const keys = require("../config/keys");
 
-const client = MongoClient();
+const client = new MongoClient(keys.mongoURI);
 const myDB = client.db("myDB");
 const myColl = myDB.collection("fruits");
 
@@ -17,5 +18,6 @@ module.exports = (app) => {
 			todo,
 			date: Date.now(),
 		});
+		console.log(toDo);
 	});
 };

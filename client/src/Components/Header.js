@@ -3,7 +3,7 @@ import Icon from "../logo512.png";
 
 const Header = ({ addToDo }) => {
 	return (
-		<div className="flex">
+		<div className="flex ">
 			<div className="flex-2 bg-red-500">
 				<img src={Icon} width={56} height={56} />
 			</div>

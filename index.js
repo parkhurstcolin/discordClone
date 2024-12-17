@@ -1,12 +1,10 @@
-var http = require("http");
+const http = require("http");
+const express = require("express");
 const keys = require("./config/keys");
 const { MongoClient } = require("mongodb");
 
 const client = new MongoClient(keys.mongoURI);
+const app = express();
+require("./routes/todoRoute")(app);
 
-http
-	.createServer(function (req, res) {
-		res.writeHead(200, { "Content-Type": "text/html" });
-		res.end("Hello World!");
-	})
-	.listen(5000);
+http.createServer(app).listen(5000);

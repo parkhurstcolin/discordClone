@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import Header from "./Components/Header";
-import Body from "./Components/Body";
-import Modal from "./Components/Modal/Modal";
-import ToDos from "./Components/ToDos/ToDos";
+import { connect } from "react-redux";
+import Header from "./Header";
+import Body from "./Body";
+import Modal from "./Modal/Modal";
+import ToDos from "./ToDos/ToDos";
+
+import * as actions from "../actions/index";
 
 const App = () => {
 	const [isModalOpen, setModalOpen] = useState(false);
@@ -28,4 +31,4 @@ const App = () => {
 	);
 };
 
-export default App;
+export default connect(null, actions)(App);

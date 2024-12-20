@@ -4,7 +4,6 @@ import Header from "./Header";
 import Modal from "./Modal/Modal";
 import SubmitToDos from "./ToDos/SubmitToDos";
 import ToDos from "./ToDos/ToDos";
-
 import * as actions from "../actions/index";
 
 const App = ({ submitToDo, fetchToDo }) => {
@@ -18,7 +17,7 @@ const App = ({ submitToDo, fetchToDo }) => {
 		<>
 			{isModalOpen && (
 				<Modal onClose={modalHandler}>
-					<SubmitToDos onSubmit={() => submitToDo(this.todo, this.username)} />
+					<SubmitToDos onSubmit={() => submitToDo()} />
 				</Modal>
 			)}
 			<div className="container mx-auto px-32 text-center">

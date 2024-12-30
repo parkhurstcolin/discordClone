@@ -3,7 +3,7 @@ const keys = require("../config/keys");
 
 const client = new MongoClient(keys.mongoURI);
 const myDB = client.db("myDB");
-const myColl = myDB.collection("fruits");
+const myColl = myDB.collection("ToDos");
 
 module.exports = (app) => {
 	app.get("/api/todo", async (req, res) => {

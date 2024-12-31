@@ -3,7 +3,7 @@ import React from "react";
 import toDoFields from "./toDoFields";
 import Fields from "./Fields";
 
-const SubmitToDos = () => {
+const SubmitToDos = ({ onSubmit }) => {
   function renderFields() {
     return _.map(toDoFields, ({ label, name }) => {
       return (

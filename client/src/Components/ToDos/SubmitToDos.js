@@ -1,9 +1,11 @@
 import _ from "lodash";
 import React from "react";
+import { connect } from "react-redux";
 import toDoFields from "./toDoFields";
 import Fields from "./Fields";
+import * as actions from "../../actions";
 
-const SubmitToDos = ({ onSubmit }) => {
+const SubmitToDos = ({ submitToDo, todoValue }) => {
   function renderFields() {
     return _.map(toDoFields, ({ label, name }) => {
       return (
@@ -22,7 +24,7 @@ const SubmitToDos = ({ onSubmit }) => {
       <div className="flex">
         <h1 className="text-3xl my-1 p-1">New To Do:</h1>
       </div>
-      <form>
+      <form onSubmit={() => submitToDo(todoValue)}>
         {renderFields()}
         <button
           className="b-0 m-1 p-2 bg-green-500 float-right rounded hover:bg-green-400"
@@ -35,4 +37,8 @@ const SubmitToDos = ({ onSubmit }) => {
   );
 };
 
-export default SubmitToDos;
+function mapStateToProps(state) {
+  return { todoValue: state.todos.toDoValuesvalues.values };
+}
+
+export default connect(mapStateToProps, actions)(SubmitToDos);

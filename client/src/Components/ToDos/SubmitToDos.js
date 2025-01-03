@@ -5,7 +5,7 @@ import toDoFields from "./toDoFields";
 import Fields from "./Fields";
 import * as actions from "../../actions";
 
-const SubmitToDos = ({ submitToDo, todoValue }) => {
+const SubmitToDos = ({ submitToDo }) => {
   function renderFields() {
     return _.map(toDoFields, ({ label, name }) => {
       return (
@@ -24,7 +24,7 @@ const SubmitToDos = ({ submitToDo, todoValue }) => {
       <div className="flex">
         <h1 className="text-3xl my-1 p-1">New To Do:</h1>
       </div>
-      <form onSubmit={() => submitToDo(todoValue)}>
+      <form onSubmit={() => submitToDo()}>
         {renderFields()}
         <button
           className="b-0 m-1 p-2 bg-green-500 float-right rounded hover:bg-green-400"

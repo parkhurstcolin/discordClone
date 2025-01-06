@@ -12,9 +12,10 @@
 	"author": "parkhurstcolin",
 	"license": "ISC",
 	"dependencies": {
+		"concurrently": "^9.1.0",
 		"express": "^4.21.2",
+		"http-proxy-middleware": "^3.0.3",
 		"mongodb": "^6.12.0",
-		"nodemon": "^3.1.9",
-		"concurrently": "^9.1.0"
+		"nodemon": "^3.1.9"
 	}
 }

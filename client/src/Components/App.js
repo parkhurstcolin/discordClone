@@ -6,14 +6,14 @@ import SubmitToDos from "./ToDos/SubmitToDos";
 import ToDos from "./ToDos/ToDos";
 import * as actions from "../actions/index";
 
-const App = ({ submitToDo, fetchToDo }) => {
-	const [isModalOpen, setModalOpen] = useState(false);
+const App = ({ submitToDo }) => {
+  const [isModalOpen, setModalOpen] = useState(false);
 
-	function modalHandler() {
-		setModalOpen(!isModalOpen);
-	}
+  function modalHandler() {
+    setModalOpen(!isModalOpen);
+  }
 
-	return (
+  return (
     <>
       {isModalOpen && (
         <Modal onClose={modalHandler}>

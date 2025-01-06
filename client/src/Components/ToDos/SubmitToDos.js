@@ -1,9 +1,7 @@
 import _ from "lodash";
 import React from "react";
-import { connect } from "react-redux";
 import toDoFields from "./toDoFields";
 import Fields from "./Fields";
-import * as actions from "../../actions";
 
 const SubmitToDos = ({ submitToDo }) => {
   function renderFields() {
@@ -37,8 +35,4 @@ const SubmitToDos = ({ submitToDo }) => {
   );
 };
 
-function mapStateToProps(state) {
-  return { todoValue: state.todos.toDoValuesvalues.values };
-}
-
-export default connect(mapStateToProps, actions)(SubmitToDos);
+export default SubmitToDos;

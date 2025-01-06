@@ -1,5 +1,5 @@
 const toDoFields = [
-  { label: "Name:", name: "username" },
+  { label: "Name:", name: "name" },
   { label: "To Do:", name: "todo" },
 ];
 

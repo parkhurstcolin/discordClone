@@ -27,7 +27,7 @@ const Header = ({ onClose }) => {
 };
 
 Header.propTypes = {
-  setShowModal: PropTypes.function,
+  onClose: PropTypes.onClose,
 };
 
 export default Header;

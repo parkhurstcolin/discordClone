@@ -1,8 +1,15 @@
+import { useState } from "react";
+import Header from "./components/Header";
+
 const App = () => {
-  return <div className='container'>
-    <h1>New App</h1>
-    <p>No CSS</p>
-  </div>;
+  const [showText, setShowText] = useState(false);
+
+  return (
+    <div className="container ">
+      <Header onShowText={() => setShowText(!showText)} />
+      <div>{showText == true ? "Shown" : "Hidden"}</div>
+    </div>
+  );
 };
 
 export default App;

@@ -1,26 +1,19 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import Modal from "./components/Modal";
+import Modal from "./components/modal/Modal";
 
 const App = () => {
-  const [showModal, setShowModal] = useState(true);
-
-  function modalContent() {
-    return (
-      <>
-        <Header setShowModal={() => setShowModal(!showModal)} />
-        <div></div>
-      </>
-    );
-  }
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="container ">
       {showModal ? (
-        <Modal onClick={() => setShowModal(!showModal)}>{modalContent()}</Modal>
+        <Modal onClose={() => setShowModal(!showModal)}></Modal>
       ) : (
-        <>{modalContent()}</>
+        <></>
       )}
+      <Header onClose={() => setShowModal(!showModal)} />
+      <div></div>
     </div>
   );
 };

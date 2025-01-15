@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
-import logo from "../logo192.png";
+import logo from "./icons/logo192.png";
 
-const Header = ({ setShowModal }) => {
+const Header = ({ onClose }) => {
   return (
     <div className="flex bg-fuchsia-500">
       <img className="object-scale-down size-16" src={logo}></img>
       <p className="text-3xl size-full self-center text-center font-bold">
         React To-Do List
       </p>
-      <button onClick={setShowModal}>
+      <button onClick={onClose}>
         <svg
           viewBox="0 0 24 24"
           strokeWidth={1.5}

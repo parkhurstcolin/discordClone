@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 import logo from "../logo192.png";
 
-const Header = ({ onShowText }) => {
+const Header = ({ setShowModal }) => {
   return (
     <div className="flex bg-fuchsia-500">
       <img className="object-scale-down size-16" src={logo}></img>
       <p className="text-3xl size-full self-center text-center font-bold">
         React To-Do List
       </p>
-      <button onClick={onShowText}>
+      <button onClick={setShowModal}>
         <svg
           viewBox="0 0 24 24"
           strokeWidth={1.5}
@@ -27,7 +27,7 @@ const Header = ({ onShowText }) => {
 };
 
 Header.propTypes = {
-  onShowText: PropTypes.function,
+  setShowModal: PropTypes.function,
 };
 
 export default Header;

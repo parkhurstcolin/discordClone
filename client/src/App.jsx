@@ -1,13 +1,26 @@
 import { useState } from "react";
 import Header from "./components/Header";
+import Modal from "./components/Modal";
 
 const App = () => {
-  const [showText, setShowText] = useState(false);
+  const [showModal, setShowModal] = useState(true);
+
+  function modalContent() {
+    return (
+      <>
+        <Header setShowModal={() => setShowModal(!showModal)} />
+        <div></div>
+      </>
+    );
+  }
 
   return (
     <div className="container ">
-      <Header onShowText={() => setShowText(!showText)} />
-      <div>{showText == true ? "Shown" : "Hidden"}</div>
+      {showModal ? (
+        <Modal onClick={() => setShowModal(!showModal)}>{modalContent()}</Modal>
+      ) : (
+        <>{modalContent()}</>
+      )}
     </div>
   );
 };

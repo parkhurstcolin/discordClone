@@ -10,20 +10,28 @@ const App = () => {
     description: "",
   });
 
+  function modalHandler() {
+    setShowModal(!showModal);
+  }
+
+  function todoHandler() {
+    setNewTodo({
+      todo: event.currentTarget.SubmitTodo.todo,
+      description: event.currentTarget.SubmitTodo.description,
+    });
+    console.log(newTodo);
+  }
+
   return (
     <div className="container w-3/5">
       {showModal ? (
         <Modal onClose={() => setShowModal(!showModal)}>
-          <SubmitTodo newToDo={newTodo} setNewTodo={setNewTodo} />
+          <SubmitTodo todoHandler={todoHandler} />
         </Modal>
       ) : (
         <></>
       )}
-      <Header
-        onNewPost={() => setShowModal(!showModal)}
-        newTodo={newTodo}
-        setNewTodo={setNewTodo}
-      />
+      <Header onNewPost={modalHandler} />
       <div></div>
     </div>
   );

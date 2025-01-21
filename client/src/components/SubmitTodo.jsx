@@ -1,15 +1,41 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 
-const SubmitTodo = ({ todoHandler }) => {
+const SubmitTodo = ({ onAddToDo }) => {
+  const [toDo, setToDo] = useState("");
+  const [description, setDescription] = useState("");
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!description) return;
+
+    const newToDo = { toDo, description, id: Date.now() };
+
+    onAddToDo(newToDo);
+    console.log(newToDo);
+    setToDo("");
+    setDescription("");
+  }
+
   return (
-    <form onSubmit={todoHandler}>
+    <form onSubmit={handleSubmit}>
       <div>
         <label>New To Do: </label>
-        <input id="todo" type="text"></input>
+        <input
+          value={toDo}
+          onChange={(e) => setToDo(e.target.value)}
+          type="text"
+          placeholder="New To Do"
+        ></input>
       </div>
       <div>
         <label>Description: </label>
-        <input id="description" type="text"></input>
+        <input
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          type="text"
+          placeholder="Please describe the job"
+        ></input>
       </div>
       <button type="submit">Submit</button>
     </form>

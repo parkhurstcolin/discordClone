@@ -5,28 +5,21 @@ import SubmitTodo from "./components/SubmitTodo";
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
-  const [newTodo, setNewTodo] = useState({
-    todo: "",
-    description: "",
-  });
+  const [toDos, setToDos] = useState([]);
 
   function modalHandler() {
     setShowModal(!showModal);
   }
 
-  function todoHandler() {
-    setNewTodo({
-      todo: event.currentTarget.SubmitTodo.todo,
-      description: event.currentTarget.SubmitTodo.description,
-    });
-    console.log(newTodo);
+  function addToDoHandler(todo) {
+    setToDos((toDos) => [...toDos, todo]);
   }
 
   return (
     <div className="container w-3/5">
       {showModal ? (
         <Modal onClose={() => setShowModal(!showModal)}>
-          <SubmitTodo todoHandler={todoHandler} />
+          <SubmitTodo onAddToDo={addToDoHandler} />
         </Modal>
       ) : (
         <></>

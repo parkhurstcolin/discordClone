@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import Modal from "./components/modal/Modal";
 import SubmitTodo from "./components/SubmitTodo";
+import ToDoList from "./components/ToDoList";
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
@@ -25,7 +26,7 @@ const App = () => {
         <></>
       )}
       <Header onNewPost={modalHandler} />
-      <div></div>
+      <ToDoList toDos={toDos} />
     </div>
   );
 };

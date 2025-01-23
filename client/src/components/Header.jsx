@@ -17,7 +17,7 @@ const Header = ({ onNewPost }) => {
 };
 
 Header.propTypes = {
-  onNewPost: PropTypes.onNewPost,
+  onNewPost: PropTypes.func,
 };
 
 export default Header;

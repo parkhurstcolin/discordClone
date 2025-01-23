@@ -16,8 +16,8 @@ function Modal({ onClose, children }) {
 }
 
 Modal.propTypes = {
-  onClose: PropTypes.onClose,
-  children: PropTypes.children,
+  onClose: PropTypes.func,
+  children: PropTypes.object,
 };
 
 export default Modal;

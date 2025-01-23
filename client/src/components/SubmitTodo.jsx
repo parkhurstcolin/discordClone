@@ -12,7 +12,6 @@ const SubmitTodo = ({ onAddToDo }) => {
     const newToDo = { toDo, description, id: Date.now() };
 
     onAddToDo(newToDo);
-    console.log(newToDo);
     setToDo("");
     setDescription("");
   }
@@ -43,7 +42,7 @@ const SubmitTodo = ({ onAddToDo }) => {
 };
 
 SubmitTodo.propTypes = {
-  todoHandler: PropTypes.todoHandler,
+  onAddToDo: PropTypes.func,
 };
 
 export default SubmitTodo;

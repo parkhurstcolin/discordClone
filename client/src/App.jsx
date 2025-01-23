@@ -13,7 +13,7 @@ const App = () => {
   }
 
   function addToDoHandler(todo) {
-    setToDos((toDos) => [...toDos, todo]);
+    setToDos((todos) => [...todos, todo]);
   }
 
   return (

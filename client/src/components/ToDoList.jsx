@@ -5,11 +5,9 @@ const ToDoList = ({ toDos }) => {
   return (
     <div>
       <ul>
-        {toDos.length !== 0 ? (
-          toDos.map((todo) => <ToDoItem toDo={todo} key={todo.id} />)
-        ) : (
-          <></>
-        )}
+        {toDos.map((todo) => (
+          <ToDoItem toDo={todo} key={todo.id} />
+        ))}
       </ul>
     </div>
   );

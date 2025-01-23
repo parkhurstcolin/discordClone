@@ -1,10 +1,19 @@
-const ToDoItem = ({ toDo, description }) => {
+import PropTypes from "prop-types";
+const ToDoItem = ({ toDo }) => {
   return (
     <li>
-      <p>{toDo}</p>
-      <p>{description}</p>
+      <div>
+        <button>X</button>
+
+        <p>{toDo.toDo}</p>
+        <p>{toDo.description}</p>
+      </div>
     </li>
   );
+};
+
+ToDoItem.propTypes = {
+  toDo: PropTypes.object,
 };
 
 export default ToDoItem;

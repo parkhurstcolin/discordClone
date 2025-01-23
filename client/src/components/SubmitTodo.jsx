@@ -8,8 +8,8 @@ const SubmitTodo = ({ onAddToDo }) => {
     e.preventDefault();
 
     if (!description) return;
-    const id = Date.now();
-    const newToDo = [toDo, description, id];
+
+    const newToDo = { toDo, description, id: Date.now() };
 
     onAddToDo(newToDo);
     setToDo("");

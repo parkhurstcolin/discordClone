@@ -2,13 +2,14 @@ import PropTypes from "prop-types";
 import ToDoItem from "./ToDoItem";
 
 const ToDoList = ({ toDos }) => {
-  console.log(toDos);
   return (
     <div>
       <ul>
-        {toDos.map((todo) => {
-          <ToDoItem todo={todo} key={todo.id} />;
-        })}
+        {toDos.length !== 0 ? (
+          toDos.map((todo) => <ToDoItem toDo={todo} key={todo.id} />)
+        ) : (
+          <></>
+        )}
       </ul>
     </div>
   );

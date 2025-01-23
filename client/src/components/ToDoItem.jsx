@@ -1,8 +1,8 @@
-const ToDoItem = (todo) => {
+const ToDoItem = ({ toDo, description }) => {
   return (
     <li>
-      <p value={todo.toDo}></p>
-      <p value={todo.description}></p>
+      <p>{toDo}</p>
+      <p>{description}</p>
     </li>
   );
 };

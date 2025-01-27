@@ -5,7 +5,7 @@ const Servers = ({ serversList }) => {
     return serversList.map((server) => {
       return (
         <div key={server.id}>
-          <p>{server.name}</p>
+          <button>{server.name}</button>
         </div>
       );
     });

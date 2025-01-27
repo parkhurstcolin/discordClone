@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const ServerChannel = ({ channels }) => {
   function renderChannels() {
     return channels.map((channel) => {
@@ -10,6 +12,10 @@ const ServerChannel = ({ channels }) => {
   }
 
   return <>{renderChannels()}</>;
+};
+
+ServerChannel.propTypes = {
+  channels: PropTypes.array,
 };
 
 export default ServerChannel;

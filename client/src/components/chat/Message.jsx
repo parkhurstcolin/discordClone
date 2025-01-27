@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Message = ({ username, message }) => {
   return (
     <>
@@ -5,6 +7,11 @@ const Message = ({ username, message }) => {
       <p>{message}</p>
     </>
   );
+};
+
+Message.propTypes = {
+  username: PropTypes.string,
+  message: PropTypes.string,
 };
 
 export default Message;

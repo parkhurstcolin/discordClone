@@ -4,7 +4,7 @@ const ServerChannel = ({ channels }) => {
   function renderChannels() {
     return channels.map((channel) => {
       return (
-        <div key={channel.key}>
+        <div className="p-0.5" key={channel.key}>
           <p>{channel.channel}</p>
         </div>
       );

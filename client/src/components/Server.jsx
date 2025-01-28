@@ -9,11 +9,11 @@ const DUMMY_CHANNELS = [
 
 const Server = () => {
   return (
-    <div className="grid grid-cols-9">
-      <div className="col-span-2">
+    <div className="flex flex-row">
+      <div className="flex flex-col m-2 ">
         <ServerChannel channels={DUMMY_CHANNELS} />
       </div>
-      <div className="col-span-7">
+      <div className="">
         <Chat />
       </div>
     </div>

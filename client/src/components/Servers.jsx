@@ -4,15 +4,15 @@ const Servers = ({ serversList }) => {
   function RenderServersList() {
     return serversList.map((server) => {
       return (
-        <div key={server.id}>
-          <button>{server.name}</button>
-        </div>
+        <button className="size-16 m-0.5" key={server.id}>
+          <img className="rounded-lg" src={server.image} />
+        </button>
       );
     });
   }
 
   return (
-    <div>
+    <div className="flex flex-col p-2 inset-y-0 bg-blue-500">
       <RenderServersList />
     </div>
   );

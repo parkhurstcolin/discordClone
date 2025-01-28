@@ -12,7 +12,7 @@ const Servers = ({ serversList }) => {
   }
 
   return (
-    <div className="flex flex-col p-2 inset-y-0 bg-blue-500">
+    <div className="flex flex-col p-2  inset-y-0">
       <RenderServersList />
     </div>
   );

@@ -5,13 +5,13 @@ const ServerChannel = ({ channels }) => {
     return channels.map((channel) => {
       return (
         <div className="p-0.5" key={channel.key}>
-          <p>{channel.channel}</p>
+          <button>#{channel.channel}</button>
         </div>
       );
     });
   }
 
-  return <>{renderChannels()}</>;
+  return <div className="flex flex-col p-2 w-48">{renderChannels()}</div>;
 };
 
 ServerChannel.propTypes = {

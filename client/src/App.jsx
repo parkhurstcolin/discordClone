@@ -29,17 +29,15 @@ const DUMMY_SERVERS = [
 ];
 const App = () => {
   return (
-    <div className="container ">
-      <div className="flex flex-row h-screen w-screen">
-        <div className="bg-blue-800">
-          <Servers serversList={DUMMY_SERVERS} />
-        </div>
-        <>
-          <div className="h-full w-0.5 bg-black" />
-        </>
-        <div className="bg-blue-700">
-          <Server />
-        </div>
+    <div className="flex flex-row h-screen w-screen">
+      <div className="bg-blue-900">
+        <Servers serversList={DUMMY_SERVERS} />
+      </div>
+      <>
+        <div className="h-full w-0.5 bg-black" />
+      </>
+      <div className="">
+        <Server />
       </div>
     </div>
   );

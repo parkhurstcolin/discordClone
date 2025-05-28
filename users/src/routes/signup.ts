@@ -1,8 +1,9 @@
 import express from 'express';
 
-const signUpRouter = express();
+const router = express();
 
-signUpRouter.get('/api/user/signup', (req, res) => {});
+router.get('/api/user/signup', (req, res) => {
+  res.send('SignUp');
+});
 
-
-export { signUpRouter as signUpRouter };
+export { router as signupRouter };

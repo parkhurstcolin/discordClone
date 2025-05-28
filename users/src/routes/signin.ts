@@ -1,7 +1,9 @@
 import express from 'express';
 
-const signInRouter = express()
+const router = express();
 
-signInRouter.get('/api/user/signin', (req, res) => {});
+router.get('/api/user/signin', (req, res) => {
+  res.send('signin');
+});
 
-export { signInRouter as signInRouter };
+export { router as signinRouter };
